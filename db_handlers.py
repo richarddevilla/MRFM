@@ -18,9 +18,9 @@ fake_gen = Faker('en_AU')
 #create MySQL connector and cursor
 #change the info here to connect to a different MySQL server
 #the current MySQL is being hosted on google cloud
-mysql_conn = mysql.connector.connect(user='mhlc',
-                                     password='Myhomelivingcare2018!',
-                                     host='192.168.1.8')
+mysql_conn = mysql.connector.connect(user='myuser',
+                                     password='MyPassword!',
+                                     host='192.168.1.5')
 mysql_cursor = mysql_conn.cursor()
 
 
