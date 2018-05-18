@@ -147,11 +147,17 @@ class App():
         self.profile_view_btn.grid(row=3)
 
     def open_file(self):
+        """
+        create a filedialog box that would allow us to choose our file
+        """
         self.file_name = filedialog.askopenfilename(filetypes = [("All files", "*.*")])
         self.file_label = ttk.Label(self.profile_frame,text=self.file_name)
         self.file_label.grid(row=6,column=1)
 
     def dl_file(self):
+        """
+        download the selected file on the file_list
+        """
         cur_item = self.file_list.focus()
         cur_id = self.file_list.item(cur_item)
         doc = db_handlers.get_document(cur_id['values'][0])
@@ -184,6 +190,9 @@ class App():
         pull_document()
 
     def ul_file(self):
+        """
+        upload our file to the database and link it to the client
+        """
         with open(self.file_name,'rb') as f:
             data = f.read()
         id = self.profile_selected['values'][0]
